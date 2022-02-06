@@ -1,39 +1,17 @@
-abstract class Employee{
- abstract var name: String
- abstract var age: Int
- abstract val hourRate: Double
+abstract class Employee(var name: String,var age: Int, var hourRate: Double){
  abstract fun salary(hours: Double): Double
  override fun toString(): String {
   return "name: $name age: $age hourRate: $hourRate"
  }
 }
-class Manager:Employee(){
- override var name: String
-  get() = TODO("Not yet implemented")
-  set(value) {}
- override var age: Int
-  get() = TODO("Not yet implemented")
-  set(value) {}
- override val hourRate: Double
-  get() = TODO("Not yet implemented")
-
+class Manager(name: String="",age: Int=20,hoursRate: Double=0.0):Employee(name,age,hoursRate){
  override fun salary(hours: Double): Double {
-  TODO("Not yet implemented")
+  return hourRate*hours
  }
-
 }
-class  Clerk:Employee(){
- override var name: String
-  get() = TODO("Not yet implemented")
-  set(value) {}
- override var age: Int
-  get() = TODO("Not yet implemented")
-  set(value) {}
- override val hourRate: Double
-  get() = TODO("Not yet implemented")
-
+class  Clerk(name: String="",age: Int=20,hoursRate: Double=0.0):Employee(name,age,hoursRate){
  override fun salary(hours: Double): Double {
-  TODO("Not yet implemented")
+  return hourRate*hours/2
  }
 
 }
