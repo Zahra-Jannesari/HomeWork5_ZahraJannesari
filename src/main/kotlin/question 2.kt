@@ -13,7 +13,6 @@ class  Clerk(name: String="",age: Int=20,hoursRate: Double=0.0):Employee(name,ag
  override fun salary(hours: Double): Double {
   return hourRate*hours/2
  }
-
 }
 data class Customer(var name:String, var age:Int,var gender:Gender){
 
