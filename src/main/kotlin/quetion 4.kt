@@ -1,4 +1,4 @@
-fun ArrayList<Any?>.print(){
+fun <T>ArrayList<T>.print(){
     this.forEach { item -> println(item.toString()) }
 }
 class Person
