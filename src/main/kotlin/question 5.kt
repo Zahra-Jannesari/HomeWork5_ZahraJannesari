@@ -7,3 +7,7 @@ fun <T>List<T>.sliceAtGivenIndex(index:Int){
         println("Index is greater than list size.")
     }
 }
+fun main(){
+    var testList=listOf(1,"Apple",true, listOf(1,2),'c',4.2)
+    testList.sliceAtGivenIndex(4)
+}
