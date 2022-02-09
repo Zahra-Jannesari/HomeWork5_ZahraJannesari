@@ -36,5 +36,10 @@ fun main(){
     for (i in 1..factorial(n)){
         println("Your output is $i");
     }
-
+    /*
+    complexity of this piece of code is O(n!)=O(5!)
+    time depends on factorial of 'n'.
+    the code repeats n!=5!=120:
+    once the for loop runs, it calls the factorial method, which runs n! times.
+    */
 }
