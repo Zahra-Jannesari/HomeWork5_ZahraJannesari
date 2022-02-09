@@ -14,7 +14,7 @@ class CheckVariables<T>(private var firstVariable:T,private var secondVariable:T
                 is Float-> maxOf(firstVariable as Float,secondVariable as Float)
                 is Double-> maxOf(firstVariable as Double,secondVariable as Double)
                 is Char->compareChars()
-                else-> null
+                else-> "Compare is not possible by this program."
             }
         }else{
             "Variables do not have same types."
