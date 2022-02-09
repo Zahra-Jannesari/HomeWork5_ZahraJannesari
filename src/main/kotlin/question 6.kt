@@ -10,6 +10,11 @@ fun main(){
 
     for (i in 0 until n)
         println("Your output is $i");
+    /*
+    complexity of this piece of code is O(n=5)
+    time depends on 'n'. A constant amount of time multiply by 5 is needed for code to run.
+    the code repeats n=5 time and each time prints a sentence.
+    */
 
 
     for (i in 1..n) {
