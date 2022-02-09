@@ -38,4 +38,8 @@ fun main() {
     for (i in 0..3){
         println(employeeList[i].salary(hoursList[i]))
     }
+
+    var customer1=Customer("Sara",22,Gender.Female)
+    var customer2=Customer("Maryam",30,Gender.Female)
+    println("Are customer 1 & 2 equal? ${customer1==customer2}")
 }
