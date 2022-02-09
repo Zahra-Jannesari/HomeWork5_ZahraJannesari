@@ -1,25 +1,20 @@
-enum class VehicleName{
-    Public_bus, Public_subway,
-    Service_ambulance, Service_truck,
-    Private_Benz,Private_van
-}
 interface Vehicle{
-    val name:VehicleName
+    val name:String
 }
 interface PublicTransportationVehicle:Vehicle {
     fun maxSpeed()
     fun maxCapacity()
-    override val name:VehicleName
+    override val name: String
 }
 interface ServiceTransportationVehicle:Vehicle {
     fun maxSpeed()
     fun maxCapacity()
-    override val name:VehicleName
+    override val name: String
 }
 interface PrivateTransportationVehicle:Vehicle {
     fun maxSpeed()
     fun maxCapacity()
-    override val name:VehicleName
+    override val name: String
 }
 fun main() {
 }
