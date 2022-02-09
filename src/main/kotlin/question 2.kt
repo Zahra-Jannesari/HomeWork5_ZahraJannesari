@@ -29,5 +29,13 @@ enum class Gender {
 }
 
 fun main() {
-
+    var managerAli=Manager("Ali", 52, 104.0)
+    var clerkSama=Clerk("Sama", 26, 110.0)
+    var managerReza=Manager("Reza", 42, 120.0)
+    var managerFarhad=Manager("Farhad", 34, 120.0)
+    var employeeList= listOf(managerAli,clerkSama,managerReza,managerFarhad)
+    var hoursList= listOf(140.0,150.0,130.0,180.0)
+    for (i in 0..3){
+        println(employeeList[i].salary(hoursList[i]))
+    }
 }
