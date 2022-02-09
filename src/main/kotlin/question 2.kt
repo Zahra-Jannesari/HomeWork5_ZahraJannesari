@@ -13,6 +13,10 @@ class Manager(name: String = "", age: Int = 20, hoursRate: Double = 0.0) : Emplo
     override fun salary(hours: Double): Double {
         return hourRate * hours
     }
+
+    override fun toString(): String {
+        return "manager:${super.toString()}"
+    }
 }
 
 class Clerk(name: String = "", age: Int = 20, hoursRate: Double = 0.0) : Employee(name, age, hoursRate) {
@@ -42,4 +46,8 @@ fun main() {
     var customer1=Customer("Sara",22,Gender.Female)
     var customer2=Customer("Maryam",30,Gender.Female)
     println("Are customer 1 & 2 equal? ${customer1==customer2}")
+
+    var managers=ArrayList<Manager>()
+    employeeList.forEach{if (it is Manager) managers.add(it) }
+    println( managers.maxByOrNull { manager -> manager.age })
 }
