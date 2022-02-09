@@ -1,6 +1,12 @@
 fun main(){
+
     var n = 5
     println("Your input is: $n")
+    /*
+    complexity of this piece of code is O(1):a constant amount of time is needed for code to run.
+    the code repeats just one time and prints a very simple sentence:"Your input is: 5"
+    */
+
 
     for (i in 0 until n)
         println("Your output is $i");
