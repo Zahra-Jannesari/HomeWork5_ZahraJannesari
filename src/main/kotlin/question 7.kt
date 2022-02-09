@@ -53,3 +53,17 @@ fun makeDecimalNumber(binaryNum: Int): Int {
     }
     return decimalNo
 }
+//fun makeBinaryNumber(decimalNum:Int):Int {
+//    var decimalNumber=decimalNum
+//    var binaryNumber = 0
+//    var count = 0
+//    while (decimalNumber != 0) {
+//        val rem = decimalNumber % 2
+//        val c = 10.toDouble().pow(count)
+//        binaryNumber += (rem * c).toInt()
+//
+//        decimalNumber /= 2
+//        count++
+//    }
+//    return binaryNumber
+//}
