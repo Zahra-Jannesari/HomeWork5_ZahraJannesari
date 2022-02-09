@@ -13,11 +13,17 @@ class CheckVariables<T>(private var firstVariable:T,private var secondVariable:T
                 is Long-> maxOf(firstVariable as Long,secondVariable as Long)
                 is Float-> maxOf(firstVariable as Float,secondVariable as Float)
                 is Double-> maxOf(firstVariable as Double,secondVariable as Double)
+                is Char->compareChars()
                 else-> null
             }
         }else{
-            println("Variables do not have same types.")
-            null
+            "Variables do not have same types."
         }
     }
+    private fun compareChars(): Char{
+        return if ((firstVariable as Char).code>=(firstVariable as Char).code)
+            firstVariable as Char
+        else secondVariable as Char
+    }
+
 }
