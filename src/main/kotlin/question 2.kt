@@ -1,19 +1,22 @@
 abstract class Employee(var name: String, var age: Int, var hourRate: Double) {
-    val ListOfPayments=ArrayList<Double>()
+    val listOfPayments=ArrayList<Double>()
     abstract fun salary(hours: Double): Double
     override fun toString(): String {
         return "name: $name age: $age hourRate: $hourRate"
     }
- fun getTotalPayment(){
-
- }
+    fun getTotalPayment():Double {
+        var sumOfPayment=0.0
+        listOfPayments.forEach { sumOfPayment+=it }
+        return sumOfPayment
+    }
 }
 
 class Manager(name: String = "", age: Int = 20, hoursRate: Double = 0.0) : Employee(name, age, hoursRate) {
     override fun salary(hours: Double): Double {
-        return hourRate * hours
+        var salary=hourRate * hours
+        listOfPayments.add(salary)
+        return salary
     }
-
     override fun toString(): String {
         return "manager:${super.toString()}"
     }
@@ -21,16 +24,14 @@ class Manager(name: String = "", age: Int = 20, hoursRate: Double = 0.0) : Emplo
 
 class Clerk(name: String = "", age: Int = 20, hoursRate: Double = 0.0) : Employee(name, age, hoursRate) {
     override fun salary(hours: Double): Double {
-        return hourRate * hours / 2
+        var salary=hourRate * hours / 2
+        listOfPayments.add(salary)
+        return salary
     }
 }
 
-data class Customer(var name: String, var age: Int, var gender: Gender) {
-}
-
-enum class Gender {
-    Male, Female
-}
+data class Customer(var name: String, var age: Int, var gender: Gender)
+enum class Gender { Male, Female }
 
 fun main() {
     var managerAli=Manager("Ali", 52, 104.0)
