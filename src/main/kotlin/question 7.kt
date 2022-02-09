@@ -1,5 +1,7 @@
 import java.lang.Exception
 import java.util.*
+import kotlin.math.pow
+
 fun main(){
     while (true) {
         try {
@@ -10,7 +12,19 @@ fun main(){
                 println("$userNumber equals to ${Integer.toBinaryString(userNumber)}")
                 break
             }else{
-
+                var taskDone=false
+                while (!taskDone) {
+                    println("Is it binary? y/n")
+                    var answer = readLine().toString()
+                    if (answer.lowercase() == "y") {
+                        println("$userNumber equals to ${makeDecimalNumber(userNumber)}")
+                        taskDone=true
+                    } else if (answer.lowercase() == "n") {
+                        println("$userNumber equals to ${Integer.toBinaryString(userNumber)}")
+                        taskDone=true
+                    }
+                }
+                break
             }
         } catch (e: Exception) {
             println("Enter a number!")
@@ -26,4 +40,16 @@ fun isBinary(number: Int): Boolean {
         binaryNumber /= 10
     }
     return true
+}
+fun makeDecimalNumber(binaryNum: Int): Int {
+    var binaryNumber = binaryNum
+    var decimalNo = 0
+    var power = 0
+    while (binaryNumber > 0) {
+        val r = binaryNumber % 10L
+        decimalNo = (decimalNo + r * 2.0.pow(power.toDouble())).toInt()
+        binaryNumber /= 10
+        power++
+    }
+    return decimalNo
 }
